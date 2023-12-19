@@ -1,0 +1,174 @@
+/* rational.c: calculator                    */
+
+/* author: James Holt                        */
+
+/* modifications:                            */
+/* 3/11/2023 EA initial version              */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+        /* Functions declaration */
+
+        /* Find the greatest common divisor of two numbers */
+int gcd(int, int);
+        /* Input a new rational number */
+void inputRational();
+        /* Print the current rational number */
+void printRational();
+        /* Express the current rational number in its reduced format */
+void reducedFormat();
+        /* Add two rational numbers */
+void addRational();
+        /* Subtract two rational numbers */
+void subRational();
+
+        /* variable def */
+int num, den, choice, newnum, newden;
+
+
+        /* other functions */
+
+void printRational(int a, int b)
+{
+          printf("--------------------------------------------\n");
+	  printf("The current result is: %d/%d\n", a, b);
+	  printf("1. Subtract a rational number from the current result;\n");
+	  printf("2. Add a rational number to the current result;\n");
+	  printf("3. Quit\n");
+	  printf("Please enter a selection: ");
+	  scanf("%d", &choice);
+	  return;
+}
+
+
+void inputRational()
+{
+          printf("Please input a rational number operand.\n");
+          printf("Numerator: ");
+          scanf("%d", &newnum);
+          printf("Denominator: ");
+          scanf("%d", &newden);
+          if (newden == 0)
+	    {
+	      printf("ERROR: Denominator cannot be zero!\n");
+	    }
+	  return;
+}
+
+void subRational ()
+{
+          if (newden == 0)
+	    {
+	      return;
+	    }
+          newnum = (num * newden) - (den * newnum);
+          newden = (den * newden);
+          return;
+}
+
+int gcd (int a, int b)
+{
+     
+      int t;
+      while (b != 0)
+	 {
+	   t = b;
+	   b = a % b;
+           a = t;
+	 }
+      return a;
+		    
+}
+
+void reducedFormat()
+{
+       if (newden == 0)
+         {
+           return;
+         }
+       int a;
+       a = gcd(newnum, newden);
+       num = newnum / a;
+       den = newden / a;
+       return;
+}
+
+void addRational ()
+
+{
+       if (newden == 0)
+	 {
+	   return;
+	 }
+       newnum = (num * newden) + (den * newnum);
+       newden = (den * newden);
+       return;
+
+}
+	  
+        /* Main Function */
+
+int main(void)
+{
+
+       /* input */
+       printf("Welcome to my positive rational number calculator!\n");
+       printf("Please input a rational number.\n");
+       printf("Numerator: ");
+       scanf("%d", &num);
+       printf("Denominator: ");
+       scanf("%d", &den);
+       if (den == 0)
+	 {
+           return 0;
+         }
+       printRational(num, den);
+
+       /* computation */
+       while(1)
+	 {
+	   switch(choice)
+	     {
+	     case 1:
+	   
+	       inputRational();
+	       subRational();
+	       reducedFormat();
+
+	       /* output */
+	       printRational(num, den);
+	       break;
+	   
+
+	     case 2:
+	   
+	       inputRational();
+	       addRational();
+	       reducedFormat();
+	       /* output */
+	       printRational(num, den);
+	       break;
+
+	     case 3:
+	       return 0;
+	     
+
+	     default:
+                printf("ERROR: Invalid option number!\n");
+		printRational(num, den);
+                break;
+
+	     }
+	 }
+
+
+
+
+
+
+
+         return 0;
+
+}

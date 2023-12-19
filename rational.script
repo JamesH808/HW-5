@@ -1,0 +1,54 @@
+Script started on 2023-03-16 12:28:43-07:00
+]0;jaholt@WWWSTU-P01:~/hw5[jaholt@WWWSTU-P01 hw5]$ emacs rational.c[6P./rationalgcc -ansi -Wall rational.c -o rational[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[22Pemacs rational.cgcc -ansi -Wall rational.c -o rational
+]0;jaholt@WWWSTU-P01:~/hw5[jaholt@WWWSTU-P01 hw5]$ gcc -ansi -Wall rational.c -o rational[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[22Pemacs rational.c[6P./rational
+Welcome to my positive rational number calculator!
+Please input a rational number.
+Numerator: 60
+Denominator: 7
+--------------------------------------------
+The current result is: 60/7
+1. Subtract a rational number from the current result;
+2. Add a rational number to the current result;
+3. Quit
+Please enter a selection: 1
+Please input a rational number operand.
+Numerator: 81
+Denominator: 12
+--------------------------------------------
+The current result is: 51/28
+1. Subtract a rational number from the current result;
+2. Add a rational number to the current result;
+3. Quit
+Please enter a selection: 2
+Please input a rational number operand.
+Numerator: 9
+Denominator: 2
+--------------------------------------------
+The current result is: 177/28
+1. Subtract a rational number from the current result;
+2. Add a rational number to the current result;
+3. Quit
+Please enter a selection: 1
+Please input a rational number operand.
+Numerator: 89
+Denominator: 28
+--------------------------------------------
+The current result is: 22/7
+1. Subtract a rational number from the current result;
+2. Add a rational number to the current result;
+3. Quit
+Please enter a selection: 2
+Please input a rational number operand.
+Numerator: 9
+Denominator: 0
+ERROR: Denominator cannot be zero!
+--------------------------------------------
+The current result is: 22/7
+1. Subtract a rational number from the current result;
+2. Add a rational number to the current result;
+3. Quit
+Please enter a selection: 3
+]0;jaholt@WWWSTU-P01:~/hw5[jaholt@WWWSTU-P01 hw5]$ exit
+exit
+
+Script done on 2023-03-16 12:29:50-07:00
